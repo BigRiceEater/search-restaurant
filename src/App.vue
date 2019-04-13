@@ -1,22 +1,18 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <div class="columns is-centered">
-        <h1 class="column title is-half has-text-centered">Search Restaurants</h1>
+  <div id="app" class="fluid-container">
+    <h1 class="title has-text-centered">Search Restaurants</h1>
+    <div v-if="showHint">
+      <div class="notification is-light is-half has-text-centered">
+        Try searching for "western" or "ramen" for example
+        <button
+          class="delete"
+          @click="showHint = false"
+        ></button>
       </div>
-      <div v-if="showHint" class="columns is-centered">
-        <div class="column">
-          <div class="notification is-light is-half has-text-centered">
-            Try searching for "western" or "ramen" for example
-            <button
-              class="delete"
-              @click="showHint = false"
-            ></button>
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <SearchContainer class="column is-half"/>
+    </div>
+    <div class="columns is-variable is-0-mobile is-centered">
+      <div class="column is-half">
+        <SearchContainer/>
       </div>
     </div>
   </div>
@@ -44,6 +40,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
-  overflow-x: hidden;
 }
 </style>
