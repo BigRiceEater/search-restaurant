@@ -2,8 +2,8 @@
   <div id="app" class="fluid-container">
     <transition name="fade">
       <div class="hint-helper" v-if="showHint">
-        <div class="notification is-primary is-half has-text-centered">
-          Try searching for "western" or "ramen" for example
+        <div class="notification is-primary has-text-centered">
+          You can search restaurants like western, seafood or by the shop name.
           <button
             class="delete"
             @click="showHint = false"
@@ -53,6 +53,7 @@ export default {
 .hint-helper {
   position: fixed; /* relative to the html element always */
   bottom: 0px;
+  right: 0px;
 }
 
 .fade-leave-active {
