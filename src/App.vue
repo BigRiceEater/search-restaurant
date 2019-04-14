@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="fluid-container">
     <transition name="fade">
-      <div class="notice" v-if="showHint">
+      <div class="hint-helper" v-if="showHint">
         <div class="notification is-primary is-half has-text-centered">
           Try searching for "western" or "ramen" for example
           <button
@@ -50,8 +50,8 @@ export default {
   margin-top: 60px;
 }
 
-.notice {
-  position: fixed;
+.hint-helper {
+  position: fixed; /* relative to the html element always */
   bottom: 0px;
 }
 
